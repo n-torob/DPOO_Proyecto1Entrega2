@@ -1,0 +1,12 @@
+Nombre de Usuario: Natali1305
+Contraseña: Natali
+ROL: Comprador
+
+Nombre de Usuario: Natali
+Contraseña: Natali1305
+ROL: Comprador
+
+Nombre de Usuario: Natali
+Contraseña: Natali1305
+ROL: Comprador
+
