@@ -1,12 +1,13 @@
 package Galeria;
 
-public class comprador {
+public class comprador extends Usuario{
 	
 	private double valorInicial;
 	private double limiteCompra;
 	
-	public comprador(double valorInicial, double limiteCompra) {
+	public comprador(double valorInicial, double limiteCompra,String nombre, String logIn, String password, String rol, String informacionContacto) {
 		
+		super(nombre, logIn, password, rol, informacionContacto);
 		this.valorInicial = valorInicial;
 		this.limiteCompra = limiteCompra;
 	}

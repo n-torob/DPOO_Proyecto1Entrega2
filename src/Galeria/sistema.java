@@ -13,12 +13,13 @@ public class sistema {
 	public ArrayList<Usuario> usuarios = new ArrayList<>();
 	public ArrayList<Pieza> piezas = new ArrayList<>();
 	public ArrayList<Compra> compras = new ArrayList<>();
+	public ArrayList<comprador> compradores = new ArrayList<>();
 	
     public void crearCuenta(String nombre, String logIn, String password, String rol, String informacionContacto) {
     	
     	Usuario usuario = new Usuario(nombre, logIn, password, rol, informacionContacto);
     	
-        String nombreArchivo = "cuenta_" + rol + ".txt";
+        String nombreArchivo = "Cuentas.txt";
         try (BufferedWriter escritor = new BufferedWriter(new FileWriter("./data/" + nombreArchivo, true))) {
             escritor.write(nombre + "; " + logIn + ";" + password + ";" + rol + ";" + informacionContacto + "/n");
         } catch (IOException e) {
@@ -115,13 +116,30 @@ public class sistema {
 		String linea = br.readLine();
 		while (linea != null) {
 		String[] partes = linea.split(";");
-		Pieza pieza = partes[0];
-		comprador Comprador = partes[1];
+		String nombre = partes[0];
+		String logIn = partes[1];
 		double precio = Double.parseDouble(partes[2]);
 		boolean confirmacion = Boolean.parseBoolean(partes[3]);
 		String tipo = partes[4];
 		
-		Compra compra = new Compra(pieza, Comprador, precio, confirmacion, tipo);
+		
+		
+		comprador C = null;
+		Pieza P = null;
+		
+		for(comprador C1: compradores) {
+			if(C1.getLogIn().equals(logIn)) {
+				C = C1;
+			}
+		}
+		
+		for(Pieza P1: piezas) {
+			if(P1.getNombre().equals(nombre)) {
+				P = P1;
+			}
+		}
+		
+		Compra compra = new Compra(P, C, precio, confirmacion, tipo);
 		
 		this.compras.add(compra);
 		linea = br.readLine();
@@ -129,7 +147,14 @@ public class sistema {
 		}
 		
 		br.close();
+		
+
 	}
 	
 
 }
+
+        
+
+        
+

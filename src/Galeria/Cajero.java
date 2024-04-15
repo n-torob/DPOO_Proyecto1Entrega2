@@ -2,23 +2,33 @@ package Galeria;
 
 
 
-public class Cajero {
+public class Cajero extends Usuario {
 
 	private String Id;
 	
 	private String metodoPago;
 	
-	public boolean registrarPago(String nombreUsuario, float costo) {
+	public Cajero(String Id, String metodoPago){
 		
-		usuario balance = new usuario(nombreUsuario);
+		this.Id = Id;
+		this.metodoPago = metodoPago;
+	}
+	
+	public boolean registrarPago(String nombreUsuario, double costo) {
 		
-		balance.getBalance();
+		comprador  LimiteCompra = new comprador();
 		
-		if (balance < costo ) {
+		LimiteCompra.getLimiteCompra();
+		
+		if (LimiteCompra < costo ) {
+			
+			return true;
 			
 		}
 		
 		else {
+			
+			return false;
 			
 		}
 		
