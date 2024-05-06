@@ -1,5 +1,4 @@
 package Galeria;
-import java.util.Random;
 
 public class Pago {
 

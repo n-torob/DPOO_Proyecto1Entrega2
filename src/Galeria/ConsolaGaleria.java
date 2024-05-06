@@ -83,7 +83,7 @@ public class ConsolaGaleria {
                System.out.println("Debe seleccionar uno de los números de las opciones.");
 	    }
 	    
-	      scanner.close();
+//	      scanner.close();
 	      
 	    }	
 	}

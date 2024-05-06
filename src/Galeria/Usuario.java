@@ -1,7 +1,5 @@
 package Galeria;
 
-import java.util.ArrayList;
-
 public class Usuario {
 	
 	private String nombre;

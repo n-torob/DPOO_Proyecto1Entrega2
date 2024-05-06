@@ -21,7 +21,8 @@ public class sistema {
     	
         String nombreArchivo = "Cuentas.txt";
         try (BufferedWriter escritor = new BufferedWriter(new FileWriter("./data/" + nombreArchivo, true))) {
-            escritor.write(nombre + "; " + logIn + ";" + password + ";" + rol + ";" + informacionContacto + "/n");
+        	escritor.write(nombre + ";" + logIn + ";" + password + ";" + rol + ";" + informacionContacto );
+            escritor.newLine();
         } catch (IOException e) {
             System.out.println("Error al crear la cuenta: " + e.getMessage());
        }
@@ -151,8 +152,17 @@ public class sistema {
 
 	}
 	
+	public boolean IngresarCuenta(String nombreUsuario, String contraseña) {
+		for(Usuario usuario: this.usuarios) {
+			if(nombreUsuario == usuario.getLogIn() && contraseña == usuario.getPassword()) {
+				return true; 
+			}
+		}
+		return false;
+	}
 
 }
+
 
         
 
