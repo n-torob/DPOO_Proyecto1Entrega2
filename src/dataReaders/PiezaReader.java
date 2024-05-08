@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import model.Pieza;
 import model.PropositoVenta;
@@ -66,5 +67,56 @@ public class PiezaReader {
 			editor.flush();
 			editor.close();
 	}
+
+	public static List<String> leerNombresDePiezas() {
+        List<String> nombres = new ArrayList<>();
+        String path = "./Piezas.csv"; // Ruta del archivo CSV
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(","); // Asumiendo que el CSV usa comas como separador
+                if (values.length > 0) {
+                    nombres.add(values[0]); // Agrega el primer elemento de cada línea, que es el nombre
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return nombres;
+
+	}
+
+	public static List<String> listarPiezasBloqueadas() {
+        return leerPiezasPorEstado("bloqueada");
+    }
+
+    public static List<String> listarPiezasEnSubasta() {
+        return leerPiezasPorEstado("subasta");
+    }
+
+    public static List<String> listarPiezasEnExhibicion() {
+        return leerPiezasPorEstado("exhibición");
+    }
+
+    public static List<String> listarPiezasEnBodega() {
+        return leerPiezasPorEstado("bodega");
+    }
+
+    private static List<String> leerPiezasPorEstado(String estado) {
+        List<String> titulos = new ArrayList<>();
+        String path = "./Piezas.csv";
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 10 && estado.equalsIgnoreCase(values[10].strip())) {
+                    titulos.add(values[0].strip());
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return titulos;
+    }
 
 }

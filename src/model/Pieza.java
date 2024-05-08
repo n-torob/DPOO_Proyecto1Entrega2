@@ -130,6 +130,13 @@ public class Pieza {
 	public void setEntrega(boolean entrega) {
 		this.entrega = entrega;
 	}
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	
 	public Double getPrecioVenta() {
