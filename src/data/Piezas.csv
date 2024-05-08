@@ -1,3 +1,3 @@
-nombre,tipo,materiales,peso,necesitaElectricidad,anioLugarDeCreacion,autor,tiempoDisponible,correoDueno,detalles
-titulo2,Video,Video sobre la vida cotidiana,0kg,true,2020 México ,Viviana,Permanente,n1@gmail.com,Video sobre la vida cotidiana,SUBASTA
-titulo1,Escultura,Gran obra,6kg,false,2017 Bogotá,Daniel,Permanente,daniel@gmail.com,Gran obra,VENTA_FIJA
+titulo,tipo,materiales,peso,necesitaElectricidad,anioLugarDeCreacion,autor,tiempoDisponible,correoDueno,detalles,tipoVenta,precio,estado
+titulo2,Video,Video sobre la vida cotidiana,0kg,true,2020 México,Viviana,Permanente,n1@gmail.com,Video sobre la vida cotidiana,SUBASTA,100.0,BODEGA
+titulo1,Escultura,Gran obra,6kg,false,2017 Bogotá,Daniel,Permanente,daniel@gmail.com,Gran obra,VENTA_FIJA,200.0,EXHIBICION
