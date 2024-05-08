@@ -6,52 +6,47 @@ public class Pieza {
 	
 	private String titulo;
 	private String tipo;
-	private ArrayList<String> materiales = new ArrayList<>();
+	private String materiales;
 	private String peso;
-	private boolean necesitaElectricidad;
-	private String anioLugarCreación;
-	private ArrayList<String> autor = new ArrayList<>();
+	private Boolean necesitaElectricidad;
+	private String anioLugarCreacion;
+	private String autor;
 	private String tiempoDisponible;
-	private String dueño;
+	private String correoDueno;
 	private String detalles;
+	private PropositoVenta propositoVenta;
+	// REVISAR ESTOS ATRIBUTOS
 	private boolean vendida;
 	private boolean bloqueada;
-	private boolean valorFijo;
 	private boolean entrega;
-	private String estado; 
-
-	public Pieza( String titulo,String tipo, ArrayList<String> materiales, String peso, boolean necesitaElectricidad, String anioLugarCreación, ArrayList<String> autor, String tiempoDisponible, String dueño, String detalles,String estado) {
+	private Double precioVenta;
+	private Double valorInicial;
+	private Double valorMinimo;
+	
+	public Pieza(String titulo, String tipo, String materiales, String peso, Boolean necesitaElectricidad, String anioLugarCreacion, String autor, String tiempoDisponible, String correoDueno, String detalles, PropositoVenta propositoVenta) {
 		this.titulo = titulo;
 		this.tipo = tipo;
 		this.materiales = materiales;
 		this.peso = peso;
 		this.necesitaElectricidad = necesitaElectricidad;
-		this.anioLugarCreación = anioLugarCreación;
+		this.anioLugarCreacion = anioLugarCreacion;
 		this.autor = autor;
 		this.tiempoDisponible = tiempoDisponible;
-		this.dueño = dueño;
+		this.correoDueno = correoDueno;
 		this.detalles = detalles;
-		this.estado = estado;
+		this.propositoVenta = propositoVenta;
+		this.precioVenta = null;
+		this.valorInicial = null;
+		this.valorMinimo = null;
 
 	}
 	
-	public String getAnioLugarCreación() {
-		return anioLugarCreación;
+	public PropositoVenta getPropositoVenta() {
+		return propositoVenta;
 	}
 
-	public void setAnioLugarCreación(String anioLugarCreación) {
-		this.anioLugarCreación = anioLugarCreación;
-	}
-
-	public Pieza(String titulo2, String tipo2, String materiales2, String peso2, String necesitaElectricidad2,
-            String anioLugarCreacion, String autor2, String tiempoDisponible2, String dueño2, String detalles2) {
-        //TODO Auto-generated constructor stub
-    }
-
-    public Pieza(String titulo2, String tipo2, String materiales2, String peso2, String necesitaElectricidad2,
-			String anioLugarCreacion, String autor2, String tiempoDisponible2, String dueño2, String detalles2,
-			String estado) {
-		//TODO Auto-generated constructor stub
+	public void setPropositoVenta(PropositoVenta propositoVenta) {
+		this.propositoVenta = propositoVenta;
 	}
 
 	public String getTipo() {
@@ -60,10 +55,10 @@ public class Pieza {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public ArrayList<String> getMateriales() {
+	public String getMateriales() {
 		return materiales;
 	}
-	public void setMateriales(ArrayList<String> materiales) {
+	public void setMateriales(String materiales) {
 		this.materiales = materiales;
 	}
 	public String getPeso() {
@@ -84,16 +79,16 @@ public class Pieza {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getAñoLugarCreación() {
-		return anioLugarCreación;
+	public String getAnioLugarCreacion() {
+		return anioLugarCreacion;
 	}
-	public void setAñoLugarCreación(String añoLugarCreación) {
-		this.anioLugarCreación = añoLugarCreación;
+	public void setAnioLugarCreacion(String anioLugarCreacion) {
+		this.anioLugarCreacion = anioLugarCreacion;
 	}
-	public ArrayList<String> getAutor() {
+	public String getAutor() {
 		return autor;
 	}
-	public void setAutor(ArrayList<String> autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
 	public String getTiempoDisponible() {
@@ -102,11 +97,11 @@ public class Pieza {
 	public void setTiempoDisponible(String tiempoDisponible) {
 		this.tiempoDisponible = tiempoDisponible;
 	}
-	public String getDueño() {
-		return dueño;
+	public String getCorreoDueno() {
+		return correoDueno;
 	}
-	public void setDueño(String dueño) {
-		this.dueño = dueño;
+	public void setCorreoDueno(String correoDueno) {
+		this.correoDueno = correoDueno;
 	}
 	public String getDetalles() {
 		return detalles;
@@ -114,6 +109,8 @@ public class Pieza {
 	public void setDetalles(String detalles) {
 		this.detalles = detalles;
 	}
+	
+	//REVISAR ESTOS ATRIBUTOS
 	public boolean isVendida() {
 		return vendida;
 	}
@@ -126,12 +123,7 @@ public class Pieza {
 	public void setBloqueada(boolean bloqueada) {
 		this.bloqueada = bloqueada;
 	}
-	public boolean isValorFijo() {
-		return valorFijo;
-	}
-	public void setValorFijo(boolean valorFijo) {
-		this.valorFijo = valorFijo;
-	}
+	
 	public boolean isEntrega() {
 		return entrega;
 	}
@@ -145,5 +137,32 @@ public class Pieza {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+	
+	public Double getPrecioVenta() {
+		return precioVenta; 
+	}
+	  
+	public void setPrecioVenta(Double precioVenta) { 
+		this.precioVenta = precioVenta; 
+	}
+
+	public Double getValorInicial() {
+		return valorInicial;
+	}
+
+	public void setValorInicial(Double valorInicial) {
+		this.valorInicial = valorInicial;
+	}
+
+	public Double getValorMinimo() {
+		return valorMinimo;
+	}
+
+	public void setValorMinimo(Double valorMinimo) {
+		this.valorMinimo = valorMinimo;
+	}
+	 
+	
 
 }

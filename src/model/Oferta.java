@@ -2,21 +2,23 @@ package model;
 
 public class Oferta {
 	/**
+	 * Atributo que identifica cada oferta
+	 * */
+	private Integer id;
+
+	/**
 	 * Atributo que relaciona una pieza con la oferta
 	 * */
-	private Pieza pieza;
+	private String tituloPieza;
 	/**
 	 * Atributo que relaciona un comprador con la oferta
 	 * */
-	private Usuario comprador;
+	private String correoComprador;
 	/**
 	 * Atributo que relaciona un monto con la oferta
 	 * */
-	private int monto;
-	/**
-	 * Atributo que relaciona el propóstio de la oferta, ya sea para una pieza en venta fija o de subasta
-	 * */
-	private String proposito;
+	private Double monto;
+	
 	/**
 	 * Atributo que relaciona el propietario de la pieza 
 	 * */
@@ -27,45 +29,46 @@ public class Oferta {
 	 * @param comprador
 	 * @param monto
 	 * */
-	public Oferta (Pieza pieza, Usuario comprador, int monto, String proposito) {
+	public Oferta (Integer id, String tituloPieza, String correoComprador, Double monto) {
 		
-		this.pieza = pieza;
-		this.comprador = comprador;
+		this.id = id;
+		this.tituloPieza = tituloPieza;
+		this.correoComprador = correoComprador;
 		this.monto = monto;
-		this.proposito = proposito;
+	
 	}
 
-	public Pieza getPieza() {
-		return pieza;
+	public String getTituloPieza() {
+		return tituloPieza;
 	}
 
-	public void setPieza(Pieza pieza) {
-		this.pieza = pieza;
+	public void setTituloPieza(String tituloPieza) {
+		this.tituloPieza = tituloPieza;
 	}
 
-	public Usuario getComprador() {
-		return comprador;
+	public String getCorreoComprador() {
+		return correoComprador;
 	}
 
-	public void setComprador(Usuario comprador) {
-		this.comprador = (Comprador) comprador;
+	public void setCorreoComprador(String correoComprador) {
+		this.correoComprador = correoComprador;
 	}
 
-	public int getMonto() {
+	public Double getMonto() {
 		return monto;
 	}
 
-	public void setMonto(int monto) {
+	public void setMonto(Double monto) {
 		this.monto = monto;
 	}
-	
-	public String getProposito() {
-		return proposito;
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	
-	public void setProposito(String proposito) {
-		this.proposito = proposito;
-	}
 	
 	
 
