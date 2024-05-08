@@ -13,23 +13,23 @@ public class PiezasController {
         return piezas;
     }
 
-    public static List<String> listarNombresDePiezas() {
+    public List<String> listarNombresDePiezas() {
         return PiezaReader.leerNombresDePiezas();
     }
 
-    public static List<String> listarPiezasBloqueadas() {
+    public List<String> listarPiezasBloqueadas() {
         return PiezaReader.listarPiezasBloqueadas();
     }
 
-    public static List<String> listarPiezasEnsubasta() {
+    public List<String> listarPiezasEnsubasta() {
         return PiezaReader.listarPiezasBloqueadas();
     }
 
-    public static List<String> listarPiezasEnExhibicion() {
+    public List<String> listarPiezasEnExhibicion() {
         return PiezaReader.listarPiezasBloqueadas();
     }
 
-    public static List<String> listarPiezasEnbodega() {
+    public List<String> listarPiezasEnbodega() {
         return PiezaReader.listarPiezasBloqueadas();
     }
 
