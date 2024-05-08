@@ -7,7 +7,7 @@ public class Pieza {
 	private String titulo;
 	private String tipo;
 	private ArrayList<String> materiales = new ArrayList<>();
-	private double peso;
+	private String peso;
 	private boolean necesitaElectricidad;
 	private String anioLugarCreación;
 	private ArrayList<String> autor = new ArrayList<>();
@@ -18,8 +18,9 @@ public class Pieza {
 	private boolean bloqueada;
 	private boolean valorFijo;
 	private boolean entrega;
-	
-	public Pieza( String titulo,String tipo, ArrayList<String> materiales, double peso, boolean necesitaElectricidad, String anioLugarCreación, ArrayList<String> autor, String tiempoDisponible, String dueño, String detalles) {
+	private String estado; 
+
+	public Pieza( String titulo,String tipo, ArrayList<String> materiales, String peso, boolean necesitaElectricidad, String anioLugarCreación, ArrayList<String> autor, String tiempoDisponible, String dueño, String detalles,String estado) {
 		this.titulo = titulo;
 		this.tipo = tipo;
 		this.materiales = materiales;
@@ -30,9 +31,29 @@ public class Pieza {
 		this.tiempoDisponible = tiempoDisponible;
 		this.dueño = dueño;
 		this.detalles = detalles;
+		this.estado = estado;
 
 	}
 	
+	public String getAnioLugarCreación() {
+		return anioLugarCreación;
+	}
+
+	public void setAnioLugarCreación(String anioLugarCreación) {
+		this.anioLugarCreación = anioLugarCreación;
+	}
+
+	public Pieza(String titulo2, String tipo2, String materiales2, String peso2, String necesitaElectricidad2,
+            String anioLugarCreacion, String autor2, String tiempoDisponible2, String dueño2, String detalles2) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public Pieza(String titulo2, String tipo2, String materiales2, String peso2, String necesitaElectricidad2,
+			String anioLugarCreacion, String autor2, String tiempoDisponible2, String dueño2, String detalles2,
+			String estado) {
+		//TODO Auto-generated constructor stub
+	}
+
 	public String getTipo() {
 		return tipo;
 	}
@@ -45,10 +66,10 @@ public class Pieza {
 	public void setMateriales(ArrayList<String> materiales) {
 		this.materiales = materiales;
 	}
-	public double getPeso() {
+	public String getPeso() {
 		return peso;
 	}
-	public void setPeso(double peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 	public boolean isNecesitaElectricidad() {
@@ -116,6 +137,13 @@ public class Pieza {
 	}
 	public void setEntrega(boolean entrega) {
 		this.entrega = entrega;
+	}
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 }
