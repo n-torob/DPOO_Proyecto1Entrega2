@@ -50,29 +50,8 @@ public class CompradorController {
 	 * @param proposito ("Subasta" o "Venta Fija")
 	 * 
 	 * */
-	 public void crearOferta(Pieza pieza, Usuario comprador, int monto, String proposito) throws Exception {
-	    	
-	    	Oferta oferta = new Oferta(pieza, comprador, monto, proposito);
+	
 	 
-	        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("./data/Ofertas.csv", true))) {
-	            escritor.write(pieza + "; "+ comprador + "; "+ monto + "; "+ proposito + "/n");
-	        } 
-	        catch (IOException e) {
-	            System.out.println("Error al crear la oferta: " + e.getMessage());
-	        }
-	        
-	        if (ofertas.containsKey(comprador)) {
-	     		List<Oferta> ofertasComprador = ofertas.get(comprador);
-	     		ofertasComprador.add(oferta);
-	     		ofertas.put(comprador, ofertasComprador);
-	     	} 
-	     	else 
-	     	{
-	     		List<Oferta> ofertasComprador  = new ArrayList<>();
-	     		ofertasComprador.add(oferta);
-	     		ofertas.put(comprador, ofertasComprador);
-	   		}
-	 }
 	 
 	 /**
 	 * Crea la compra para una pieza (aprobada para ser comprada)
@@ -98,29 +77,6 @@ public class CompradorController {
 	        
 	 }
 	 
-	 /**
-	 * Crea una pieza para la galeria
-	 * @param pieza
-	 * @param comprador
-	 * @param precio
-	 * @param confirmación
-	 * @param proposito
-	 * 
-	 * */
-	 public void crearPieza(String titulo, String tipo, ArrayList<String> materiales, double peso, boolean necesitaElectricidad, String anioLugarCreacion, ArrayList<String> autor, String tiempoDisponible, String dueño, String detalles) {
-	    	
-	    	Pieza pieza = new Pieza(titulo, tipo, materiales, peso, necesitaElectricidad, anioLugarCreacion, autor, tiempoDisponible, dueño, detalles);
 	 
-	        try (BufferedWriter escritor = new BufferedWriter(new FileWriter("./data/Piezas.csv", true))) {
-	        
-	            escritor.write(titulo + "; " + tipo + "; "+ materiales + "; "+ peso + "; "+ anioLugarCreacion + "; "+ autor + "; " + tiempoDisponible +  "; "+ dueño + "; "+ detalles + "; "+"/n");
-	        }
-	        catch (IOException e) {
-	            System.out.println("Error al crear la pieza: " + e.getMessage());
-	        }
-	        
-	        this.piezas.add(pieza);
-	        
-	 }
 
 }
