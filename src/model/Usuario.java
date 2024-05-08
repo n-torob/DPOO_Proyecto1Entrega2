@@ -8,15 +8,23 @@ public class Usuario {
 	private String contrasena;
 	private Roles rol;
 	private String correo;
+    private Double dinero;
 
-	public Usuario(String nombre, String contrasena, Roles rol, String correo) {
+	public Usuario(String nombre, String contrasena, Roles rol, String correo, Double dinero) {
 		super();
 		this.nombre = nombre;
 		this.contrasena = contrasena;
 		this.rol = rol;
 		this.correo = correo;
+        this.dinero = dinero;
 	}
-	public String getNombre() {
+	public Double getDinero() {
+        return dinero;
+    }
+    public void setDinero(Double dinero) {
+        this.dinero = dinero;
+    }
+    public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {

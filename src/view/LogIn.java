@@ -18,11 +18,11 @@ public class LogIn {
 			try {
 				Boolean exito = logInController.login(correo, contrasena, rol);
 				if (exito) {
-					System.out.println("Bienvenido pana");
+					System.out.println("Bienvenido");
 					continuar = false;
 					return true;
 				} else {
-					System.out.println("Pailaaas");
+					System.out.println("Algo no esta bien, por favor intenta de nuevo");
 					return false;
 				}
 			} catch (Exception e) {

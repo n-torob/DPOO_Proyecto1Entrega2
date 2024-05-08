@@ -25,8 +25,9 @@ public class UsuarioReader {
 		String correo = partes[1].strip();
 		String contrasena = partes[2].strip();
 		String rol = partes[3].strip();
+        Double dinero = Double.parseDouble(partes[4].strip());
 		
-		Usuario usuario = new Usuario(nombre, contrasena, Roles.valueOf(rol), correo);
+		Usuario usuario = new Usuario(nombre, contrasena, Roles.valueOf(rol), correo, dinero);
 		
 		usuarios.put(correo, usuario);
 		linea = br.readLine();
