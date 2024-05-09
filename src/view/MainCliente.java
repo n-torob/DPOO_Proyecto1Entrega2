@@ -41,12 +41,13 @@ public class MainCliente {
 
 	private void mostrarOpciones() {
 		System.out.println("Seleccione una opción:");
-        System.out.println("1. ver lista de piezas totales");
+        System.out.println("1. ver lista de piezas en inventario");
         System.out.println("2. ver lista de piezas de subasta");
         System.out.println("3. ver lista de piezas de venta");
         System.out.println("4. agregar nueva Pieza");
-        System.out.println("4. Hacer oferta sobre pieza en subasta");
-        System.out.println("4. Hacer compra sobre pieza en venta fija");
+		System.out.println("5. ver compras");
+        System.out.println("6. Hacer oferta sobre pieza en subasta");
+        System.out.println("7. Hacer compra sobre pieza en venta fija");
 	}
 
 	private void ejecutarOpciones(){
@@ -89,6 +90,15 @@ public class MainCliente {
 					System.out.println("Opcion 4 seleccionada");
 					vistaCrearPieza.mostraMenuCrearPieza();
 						break;
+				case 5:
+					System.out.println("Opcion 5 seleccionada");
+					HashMap<String, Pieza> pieza =  piezasController.consultarPiezas();
+					for (Map.Entry<String, Pieza> entry : pieza.entrySet()) {
+						String key = entry.getKey();
+						Pieza value = entry.getValue();
+						System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+						
+					}
 				default:
 				System.out.println("Opcion incorrecta!");
 					break;

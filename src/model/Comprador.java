@@ -14,18 +14,11 @@ public class Comprador extends Usuario{
 	 * */
 	private List<Pieza> piezasPropias;
 	
-	public Comprador(String nombre, String contrasena, Roles rol, String correo, Double dinero) {
-		super(nombre, contrasena, rol, correo, dinero); 
+	public Comprador(String nombre, String contrasena, Roles rol, String correo, Double) {
+		super(nombre, contrasena, rol, correo); 
 		piezasPropias = new LinkedList<Pieza>();
 	}
 
-	public double getMontoMaximo() {
-		return montoMaximo;
-	}
-
-	public void setMontoMaximo(double montoMaximo) {
-		this.montoMaximo = montoMaximo;
-	}
 	public List<Pieza> getPiezas(){
 		return piezasPropias;
 	}
