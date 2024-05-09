@@ -40,6 +40,10 @@ public class PiezasController {
 	       }
 	       
 	 }
+	 public HashMap<String, Pieza>consultarTodasLasPiezas(){
+		HashMap <String, Pieza> piezas = new HashMap <String, Pieza>();
+		return piezas;
+	 }
 	 
 	 public HashMap<String, Pieza> consultarPiezasSubasta(){
 		 	HashMap <String, Pieza> piezasSubasta = new HashMap <String, Pieza>();

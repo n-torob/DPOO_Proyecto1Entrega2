@@ -22,8 +22,9 @@ public class Pieza {
 	private Double precioVenta;
 	private Double valorInicial;
 	private Double valorMinimo;
+	private Estado estado;
 	
-	public Pieza(String titulo, String tipo, String materiales, String peso, Boolean necesitaElectricidad, String anioLugarCreacion, String autor, String tiempoDisponible, String correoDueno, String detalles, PropositoVenta propositoVenta) {
+	public Pieza(String titulo, String tipo, String materiales, String peso, Boolean necesitaElectricidad, String anioLugarCreacion, String autor, String tiempoDisponible, String correoDueno, String detalles, PropositoVenta propositoVenta,Double precio,Estado estado) {
 		this.titulo = titulo;
 		this.tipo = tipo;
 		this.materiales = materiales;
@@ -38,9 +39,27 @@ public class Pieza {
 		this.precioVenta = null;
 		this.valorInicial = null;
 		this.valorMinimo = null;
+		this.precioVenta = precio;
+		this.estado = estado;
 
 	}
 	
+	public Boolean getNecesitaElectricidad() {
+		return necesitaElectricidad;
+	}
+
+	public void setNecesitaElectricidad(Boolean necesitaElectricidad) {
+		this.necesitaElectricidad = necesitaElectricidad;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
 	public PropositoVenta getPropositoVenta() {
 		return propositoVenta;
 	}
@@ -130,14 +149,6 @@ public class Pieza {
 	public void setEntrega(boolean entrega) {
 		this.entrega = entrega;
 	}
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
 	
 	public Double getPrecioVenta() {
 		return precioVenta; 
