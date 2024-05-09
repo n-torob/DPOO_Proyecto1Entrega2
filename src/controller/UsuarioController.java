@@ -3,6 +3,7 @@ package controller;
 import java.util.HashMap;
 import dataReaders.UsuarioReader;
 import model.Usuario;
+import model.Roles;
 
 public class UsuarioController {
 
@@ -16,7 +17,9 @@ public class UsuarioController {
         
     }
 
-    public void registrarusuasrio(){
+    public void registrarusuasrio(String nombre, String contrasena, Roles rol, String correo){
+        Usuario u = new Usuario(nombre, contrasena, rol, correo);
+        UsuarioReader.usuarios.put(correo, u);
 
     }
     

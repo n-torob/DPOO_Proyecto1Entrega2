@@ -14,7 +14,7 @@ public class Comprador extends Usuario{
 	 * */
 	private List<Pieza> piezasPropias;
 	
-	public Comprador(String nombre, String contrasena, Roles rol, String correo, Double) {
+	public Comprador(String nombre, String contrasena, Roles rol, String correo) {
 		super(nombre, contrasena, rol, correo); 
 		piezasPropias = new LinkedList<Pieza>();
 	}
