@@ -8,6 +8,7 @@ import model.Pieza;
 import model.PropositoVenta;
 import model.Roles;
 import model.Usuario;
+import model.Estado;
 
 public class PiezasController {
     
@@ -71,6 +72,44 @@ public class PiezasController {
 	        return piezasVenta;
 	    
 	    }
+
+	 public HashMap<String, Pieza> consultarPiezasBodega(){
+		 	HashMap <String, Pieza> piezasBodega = new HashMap <String, Pieza>();
+	        for (Map.Entry<String, Pieza> entry : PiezaReader.piezas.entrySet()) {
+				String titulo = entry.getKey();
+				Pieza pieza = entry.getValue();
+				if (pieza.getEstado().equals(Estado.BODEGA)) {
+					piezasBodega.put(titulo, pieza);
+				}
+	        }
+	        
+	        return piezasBodega;
+		}
+	
+	public HashMap<String, Pieza> consultarPiezasbloqueadas(){
+		 	HashMap <String, Pieza> piezasBloqueadas = new HashMap <String, Pieza>();
+	        for (Map.Entry<String, Pieza> entry : PiezaReader.piezas.entrySet()) {
+				String titulo = entry.getKey();
+				Pieza pieza = entry.getValue();
+				if (pieza.getEstado().equals(Estado.BLOQUEADA)) {
+					piezasBloqueadas.put(titulo, pieza);
+				}
+	        }
+	        
+	        return piezasBloqueadas;
 	 
-	 
+		}
+
+	public HashMap<String, Pieza> consultarPiezasExhibicion(){
+		 	HashMap <String, Pieza> piezasExhibicion = new HashMap <String, Pieza>();
+	        for (Map.Entry<String, Pieza> entry : PiezaReader.piezas.entrySet()) {
+				String titulo = entry.getKey();
+				Pieza pieza = entry.getValue();
+				if (pieza.getEstado().equals(Estado.EXHIBICION)) {
+					piezasExhibicion.put(titulo, pieza);
+				}
+	        }
+	        
+	        return piezasExhibicion;
+	}
 }

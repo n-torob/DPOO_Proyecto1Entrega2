@@ -13,6 +13,7 @@ import model.Pieza;
 import model.PropositoVenta;
 import model.Roles;
 import model.Usuario;
+import model.Estado;
 
 public class PiezaReader {
     public static HashMap<String, Pieza> piezas= new HashMap<String, Pieza>();

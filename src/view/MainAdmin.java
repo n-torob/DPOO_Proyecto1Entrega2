@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dataReaders.UsuarioReader;
 import model.Pieza;
@@ -14,12 +15,12 @@ import model.Usuario;
 import util.Input;
 import controller.PiezasController;
 import dataReaders.PiezaReader;
+import model.Estado;
 
 public class MainAdmin {
     
     private static String ruta = "./src/data/";
     private UsuarioController usuarioController = new UsuarioController();
-
     private PiezasController piezasController = new PiezasController();
 
     public static void main(String[] args) {
@@ -81,26 +82,46 @@ public class MainAdmin {
             
                 case 3:
                     System.out.println("Lista de piezas bloqueadas:");
-                    //List<String> piezasBloqueadas = PiezasController.listarPiezasBloqueadas();
-                    //piezasBloqueadas.forEach(System.out::println);
+                    HashMap<String, Pieza> piezasBloqueadas =  piezasController.consultarPiezasbloqueadas();
+                    for (Map.Entry<String, Pieza> entry : piezasBloqueadas.entrySet()) {
+                        String key = entry.getKey();
+                        Pieza value = entry.getValue();
+                        System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+					
+				    }
                     break;
 
                 case 4:
                     System.out.println("Lista de piezas en subasta:");
-                    //List<String> piezasSubasta = PiezasController.listarPiezasEnSubasta();
-                    //piezasSubasta.forEach(System.out::println);
+                    HashMap<String, Pieza> piezasSubasta =  piezasController.consultarPiezasSubasta();
+                    for (Map.Entry<String, Pieza> entry : piezasSubasta.entrySet()) {
+                        String key = entry.getKey();
+                        Pieza value = entry.getValue();
+                        System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+					
+				    }
                     break;
             
                 case 5:
                     System.out.println("Lista de piezas en exhibición:");
-                    //List<String> piezasExhibicion = PiezasController.listarPiezasEnExhibicion();
-                    //piezasExhibicion.forEach(System.out::println);
+                    HashMap<String, Pieza> piezasExhibicion =  piezasController.consultarPiezasExhibicion();
+                    for (Map.Entry<String, Pieza> entry : piezasExhibicion.entrySet()) {
+                        String key = entry.getKey();
+                        Pieza value = entry.getValue();
+                        System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+					
+				    }
                     break;
             
                 case 6:
                     System.out.println("Lista de piezas en bodega:");
-                    //List<String> piezasBodega = PiezasController.listarPiezasEnBodega();
-                    //piezasBodega.forEach(System.out::println);
+                    HashMap<String, Pieza> piezasBodega =  piezasController.consultarPiezasSubasta();
+                    for (Map.Entry<String, Pieza> entry : piezasBodega.entrySet()) {
+                        String key = entry.getKey();
+                        Pieza value = entry.getValue();
+                        System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+					
+				    }
                     break;
             
                 case 7:
