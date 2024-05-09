@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import dataReaders.UsuarioReader;
 import model.Pieza;
@@ -81,8 +82,12 @@ public class MainAdmin {
             
                 case 3:
                     System.out.println("Lista de piezas bloqueadas:");
-                    //List<String> piezasBloqueadas = PiezasController.listarPiezasBloqueadas();
-                    //piezasBloqueadas.forEach(System.out::println);
+                    HashMap<String, Pieza> piezasSubasta =  piezasController.consultarPiezasSubasta();
+                    for (Map.Entry<String, Pieza> entry : piezasSubasta.entrySet()) {
+                        String key = entry.getKey();
+                        Pieza value = entry.getValue();
+                        System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+                    }
                     break;
 
                 case 4:
