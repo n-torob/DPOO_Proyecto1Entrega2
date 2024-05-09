@@ -1,7 +1,6 @@
 package view;
 
 import controller.PiezasController;
-import model.Estado;
 import model.Pieza;
 import model.PropositoVenta;
 import util.Input;
@@ -25,9 +24,7 @@ public class VistaCrearPieza {
 		String dueno = Input.input("Ingrese el dueño actual de la pieza: ");
 		String detalles = Input.input("Ingrese descripción de la pieza: ");
 		PropositoVenta propositoVenta = PropositoVenta.valueOf(Input.input("Ingrese si es SUBASTA o VENTA_FIJA: "));
-		Double precio = Double.parseDouble(Input.input("Ingrese el precio con punto decimal: "));
-		Estado estado = Estado.valueOf(Input.input("Ingrese el estado (BODEGA, EXHIBICION, SUBASTA): "));
-		Pieza nuevaPieza = new Pieza (titulo, tipo, materiales, peso, necesitaElectricidad, anioLugarCreacion, autor, tiempoDisponible, dueno, detalles, propositoVenta, precio, estado);
+		Pieza nuevaPieza = new Pieza (titulo, tipo, materiales, peso, necesitaElectricidad, anioLugarCreacion, autor, tiempoDisponible, dueno, detalles, propositoVenta);
 		piezaController.crearPieza(nuevaPieza);
 		//CONFIRMACION ADMINISTRADOR
 	}

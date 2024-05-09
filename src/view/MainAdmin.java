@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 import dataReaders.UsuarioReader;
-import model.Pieza;
 import model.Roles;
 import model.Usuario;
 import util.Input;
@@ -21,19 +20,13 @@ public class MainAdmin {
     private static String ruta = "./src/data/";
     private UsuarioController usuarioController = new UsuarioController();
 
-    private PiezasController piezasController = new PiezasController();
-
     public static void main(String[] args) {
         MainAdmin vista = new MainAdmin();
         
         UsuarioReader usuarioReader = new UsuarioReader();
-        PiezaReader piezaReader = new PiezaReader();
         try {
             Integer nUsuarios = usuarioReader.cargarInformacionCuentas(ruta);
             System.out.println("Se cargaron " + nUsuarios + " usuarios");
-            Integer nPiezas = piezaReader.cargarInformacionPiezas(ruta);
-            System.out.println("Se cargaron " + nPiezas + " piezas");
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,47 +58,45 @@ public class MainAdmin {
                 case 1:
                     System.out.println("ver lista de usuarios");
                     HashMap<String, Usuario> usuarios = this.usuarioController.consultarUsuarios();
-                    for (Usuario usuario:usuarios.values()){
-                        System.out.println(usuario.getNombre());
-                    }
                     break;
             
                 case 2:
                     System.out.println("Lista de nombres de piezas:");
-                    //List<String> nombresPiezas = PiezasController.listarNombresDePiezas();
-                    //nombresPiezas.forEach(System.out::println); // Imprime cada nombre en una nueva línea
-                    HashMap <String, Pieza> piezas = piezasController.consultarPiezas();
-                    for (Pieza pieza:piezas.values()){
-                        System.out.println(pieza.getTitulo());
-                    }
+                    List<String> nombresPiezas = PiezasController.listarNombresDePiezas();
+                    nombresPiezas.forEach(System.out::println); // Imprime cada nombre en una nueva línea
                     break;
             
                 case 3:
                     System.out.println("Lista de piezas bloqueadas:");
+<<<<<<< HEAD
                     HashMap<String, Pieza> piezasSubasta =  piezasController.consultarPiezasSubasta();
                     for (Map.Entry<String, Pieza> entry : piezasSubasta.entrySet()) {
                         String key = entry.getKey();
                         Pieza value = entry.getValue();
                         System.out.println("- " + value.getTitulo() + "," + value.getAutor());
                     }
+=======
+                    List<String> piezasBloqueadas = PiezasController.listarPiezasBloqueadas();
+                    piezasBloqueadas.forEach(System.out::println);
+>>>>>>> parent of 9712d74 (usuario)
                     break;
 
                 case 4:
                     System.out.println("Lista de piezas en subasta:");
-                    //List<String> piezasSubasta = PiezasController.listarPiezasEnSubasta();
-                    //piezasSubasta.forEach(System.out::println);
+                    List<String> piezasSubasta = PiezasController.listarPiezasEnSubasta();
+                    piezasSubasta.forEach(System.out::println);
                     break;
             
                 case 5:
                     System.out.println("Lista de piezas en exhibición:");
-                    //List<String> piezasExhibicion = PiezasController.listarPiezasEnExhibicion();
-                    //piezasExhibicion.forEach(System.out::println);
+                    List<String> piezasExhibicion = PiezasController.listarPiezasEnExhibicion();
+                    piezasExhibicion.forEach(System.out::println);
                     break;
             
                 case 6:
                     System.out.println("Lista de piezas en bodega:");
-                    //List<String> piezasBodega = PiezasController.listarPiezasEnBodega();
-                    //piezasBodega.forEach(System.out::println);
+                    List<String> piezasBodega = PiezasController.listarPiezasEnBodega();
+                    piezasBodega.forEach(System.out::println);
                     break;
             
                 case 7:
