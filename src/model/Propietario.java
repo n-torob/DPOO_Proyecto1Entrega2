@@ -3,11 +3,12 @@ package model;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Comprador extends Usuario{
+public class Propietario extends Usuario{
+
 
 	private List<Pieza> piezasPropias;
 	
-	public Comprador(String nombre, String contrasena, Roles rol, String correo) {
+	public Propietario(String nombre, String contrasena, Roles rol, String correo) {
 		super(nombre, contrasena, rol, correo); 
 		piezasPropias = new LinkedList<Pieza>();
 	}

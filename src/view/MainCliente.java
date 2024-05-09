@@ -41,7 +41,7 @@ public class MainCliente {
 
 	private void mostrarOpciones() {
 		System.out.println("Seleccione una opción:");
-        System.out.println("1. ver lista de piezas en inventario");
+        System.out.println("1. ver lista de piezas en galeria");
         System.out.println("2. ver lista de piezas de subasta");
         System.out.println("3. ver lista de piezas de venta");
         System.out.println("4. agregar nueva Pieza");
