@@ -3,11 +3,13 @@ package view;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.EmpleadoController;
 import controller.PiezasController;
 import dataReaders.PiezaReader;
 import dataReaders.UsuarioReader;
 import model.Pieza;
 import model.Roles;
+import model.Usuario;
 import util.Input;
 
 public class MainCliente {
@@ -97,8 +99,38 @@ public class MainCliente {
 						String key = entry.getKey();
 						Pieza value = entry.getValue();
 						System.out.println("- " + value.getTitulo() + "," + value.getAutor());
-						
+				case 6:
+					System.out.println("Opcion 6 seleccionada");
+					HashMap<String, Pieza> pieza =  piezasController.consultarPiezas();
+					String email = Input.input("Ingrese el email del usuario:");
+					for (Map.Entry<String, Pieza> entry : pieza.entrySet()) {
+						String key = entry.getKey();
+						Pieza value = entry.getValue();
+						System.out.println("- " + value.getTitulo() + "," + value.getAutor());}
+					String email = Input.input("Ingrese el email del usuario:");
+					Double monto = Double.parseDouble(Input.input("Ingrese el monto del pago:"));
+					String formaPago = Input.input("Ingrese forma de pago:");
+					String transaccion = Input.input("Ingrese estado de la transacción:");
+					HashMap<Usuario, Double> pagos = new EmpleadoController.registrarPago(email, monto, formaPago, transaccion);
+					for (Map.Entry<Usuario, Double> entry : pagos.entrySet()) {
+						Usuario key = entry.getKey();
+						Double value = entry.getValue();
+						System.out.println("- " + key.getNombre() + "," + value);
 					}
+
+				case 7:
+					System.out.println("Opcion 7 seleccionada");
+					String email = Input.input("Ingrese el email del usuario:");
+					Double monto = Double.parseDouble(Input.input("Ingrese el monto del pago:"));
+					String formaPago = Input.input("Ingrese forma de pago:");
+					String transaccion = Input.input("Ingrese estado de la transacción:");
+					HashMap<Usuario, Double> pagos = new EmpleadoController.registrarPago(email, monto, formaPago, transaccion);
+					for (Map.Entry<Usuario, Double> entry : pagos.entrySet()) {
+						Usuario key = entry.getKey();
+						Double value = entry.getValue();
+						System.out.println("- " + key.getNombre() + "," + value);
+					}
+
 				default:
 				System.out.println("Opcion incorrecta!");
 					break;
