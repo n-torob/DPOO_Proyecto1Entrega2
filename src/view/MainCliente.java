@@ -100,6 +100,7 @@ public class MainCliente {
 						Pieza value = entry.getValue();
 						System.out.println("- " + value.getTitulo() + "," + value.getAutor());
 				case 6:
+				/* 
 					System.out.println("Opcion 6 seleccionada");
 					HashMap<String, Pieza> pieza =  piezasController.consultarPiezas();
 					String email = Input.input("Ingrese el email del usuario:");
@@ -117,8 +118,9 @@ public class MainCliente {
 						Double value = entry.getValue();
 						System.out.println("- " + key.getNombre() + "," + value);
 					}
-
+					*/
 				case 7:
+					/* 
 					System.out.println("Opcion 7 seleccionada");
 					String email = Input.input("Ingrese el email del usuario:");
 					Double monto = Double.parseDouble(Input.input("Ingrese el monto del pago:"));
@@ -130,7 +132,7 @@ public class MainCliente {
 						Double value = entry.getValue();
 						System.out.println("- " + key.getNombre() + "," + value);
 					}
-
+				*/
 				default:
 				System.out.println("Opcion incorrecta!");
 					break;
@@ -138,4 +140,4 @@ public class MainCliente {
 		}
 	}
 
-}
+
