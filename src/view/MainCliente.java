@@ -99,6 +99,7 @@ public class MainCliente {
 						String key = entry.getKey();
 						Pieza value = entry.getValue();
 						System.out.println("- " + value.getTitulo() + "," + value.getAutor());
+					}
 				case 6:
 				/* 
 					System.out.println("Opcion 6 seleccionada");
@@ -139,5 +140,9 @@ public class MainCliente {
 			}
 		}
 	}
+}
+
+	
+
 
 
