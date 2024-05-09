@@ -69,12 +69,17 @@ public class MainAdmin {
                 case 3:
                     System.out.println("Lista de piezas bloqueadas:");
 <<<<<<< HEAD
+<<<<<<< HEAD
                     HashMap<String, Pieza> piezasSubasta =  piezasController.consultarPiezasSubasta();
                     for (Map.Entry<String, Pieza> entry : piezasSubasta.entrySet()) {
                         String key = entry.getKey();
                         Pieza value = entry.getValue();
                         System.out.println("- " + value.getTitulo() + "," + value.getAutor());
                     }
+=======
+                    List<String> piezasBloqueadas = PiezasController.listarPiezasBloqueadas();
+                    piezasBloqueadas.forEach(System.out::println);
+>>>>>>> parent of 9712d74 (usuario)
 =======
                     List<String> piezasBloqueadas = PiezasController.listarPiezasBloqueadas();
                     piezasBloqueadas.forEach(System.out::println);
