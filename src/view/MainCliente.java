@@ -6,6 +6,7 @@ import java.util.Map;
 import controller.PiezasController;
 import dataReaders.PiezaReader;
 import dataReaders.UsuarioReader;
+import model.Compra;
 import model.Pieza;
 import model.Roles;
 import util.Input;
@@ -45,8 +46,9 @@ public class MainCliente {
         System.out.println("2. ver lista de piezas de subasta");
         System.out.println("3. ver lista de piezas de venta");
         System.out.println("4. agregar nueva Pieza");
-        System.out.println("4. Hacer oferta sobre pieza en subasta");
-        System.out.println("4. Hacer compra sobre pieza en venta fija");
+        System.out.println("5. Hacer oferta sobre pieza en subasta");
+        System.out.println("6. Hacer compra sobre pieza en venta fija");
+		System.out.println("7. Ver compras hechas");
 	}
 
 	private void ejecutarOpciones(){

@@ -1,5 +1,6 @@
 package model;
 
+import model.Comprador;
 public class Compra {
 
 	private Pieza pieza;
@@ -18,7 +19,6 @@ public class Compra {
 		
 	}
 
-	
 	public Pieza getPieza() {
 		return pieza;
 	}
@@ -57,5 +57,15 @@ public class Compra {
 
 	public void setProposito(String proposito) {
 		this.proposito = proposito;
+	}
+
+	public boolean Confirmarpago() {
+		Confirmación= null
+		Bolsillo=comprador(bolsillo)
+		if Bolsillo>= precio ;
+			confirmacion=true
+		else;
+			confirmacion=false 
+		return confirmacion
 	}
 }

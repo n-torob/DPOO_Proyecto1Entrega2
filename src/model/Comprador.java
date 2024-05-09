@@ -2,30 +2,19 @@ package model;
 
 import java.util.LinkedList;
 import java.util.List;
+import model.Pago;
 
 public class Comprador extends Usuario{
 
-	/**
-	 * Atributo que indica el monto maximo a gastar
-	 * */
-	private double montoMaximo;
-	/**
-	 * Lista de las piezas que son propiedad del usuario
-	 * */
 	private List<Pieza> piezasPropias;
+	private List<Pago> MetodosPago;
 	
-	public Comprador(String nombre, String contrasena, Roles rol, String correo, Double dinero) {
-		super(nombre, contrasena, rol, correo, dinero); 
+	public Comprador(String nombre, String contrasena, Roles rol, String correo) {
+		super(nombre, contrasena, rol, correo); 
 		piezasPropias = new LinkedList<Pieza>();
+		MetodosPago = new LinkedList<Pago>();
 	}
 
-	public double getMontoMaximo() {
-		return montoMaximo;
-	}
-
-	public void setMontoMaximo(double montoMaximo) {
-		this.montoMaximo = montoMaximo;
-	}
 	public List<Pieza> getPiezas(){
 		return piezasPropias;
 	}
@@ -33,6 +22,9 @@ public class Comprador extends Usuario{
 	public void agregarPiezaPropia(Pieza pieza){
 		piezasPropias.add(pieza);
 	}
-		
+	
+	public void metodosPago(model.Pago clasePago){
+		Bolsillo=Pago(Monto)
+	}
 
 }
